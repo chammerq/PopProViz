@@ -1,4 +1,4 @@
-Spatial visualization of unnormalized data is often effectively just plotting population density. Scaling by population density can help, but depending on the type of data, this can effectively be plotting inverse population density. To adjust for this, I suggest plotting a weighted residual instead. Several of these options are briefly discussed below. Also an R-file with a function that implements these methods is included.
+Spatial visualization of unnormalized data is often effectively just plotting population density. Scaling by population density can help, but depending on the type of data, this can effectively be plotting inverse population density. To adjust for this, I suggest plotting a weighted residual instead. Several of these options are briefly discussed below. It is possible that these ideas already exist in literature, but I haven't run across them. Also an R-file with a function that implements these methods is included.
 
 ## Weighted Least Squares
 
@@ -26,7 +26,7 @@ b. Use variance estimate from binomial distribution assumption:
 
 
 ## Difference in proportions
-Starting with the assumption that  q<sub>i</sub> is  binomial  distributed, then the estimate for the proportion is:
+Starting with the assumption that  q<sub>i</sub> is  binomially  distributed, then the estimate for the proportion is:
 
 <img src="https://render.githubusercontent.com/render/math?math=P_i = \frac{q_i}{p_i}">
 
@@ -41,3 +41,7 @@ The weighted residual in this case is the difference in in proportions:
 
 where <em>P</em><sub>i &ne;t</sub> is the total proportion estimate from the data set not including region <em>i</em>.
 
+
+## Example 
+In the figure below, lightning deaths from 1959 to 1994 are plotted below to demonstrate these normalization techniques. The lightning data is sourced from https://www.weather.gov/cae/lightningbystate.html and the population numbers are from the 1979 estimate sourced from https://www2.census.gov/programs-surveys/popest/datasets/1970-1980/national/asrh/. In the raw numbers, the larger population of Florida makes it stand out. In the per-population plot, the small population makes Wyoming stand out. The weighted least squares normalization is able to highlight both Florida and Wyoming along with a handful of other states. It also highlights how California is surprisingly low. In the binomially distributed normalization, California is so low that washes out the rest. In my experience in some data sets, the second method can amplify outliers, which could be desirable depending on the goals.
+![Comparision](https://user-images.githubusercontent.com/102822092/167511207-8ae95be8-a9e4-4d15-80b8-badd0a5991a0.png)
