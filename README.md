@@ -37,7 +37,7 @@ with estimate variance:
 
 The weighted residual in this case is the difference in in proportions:
 
-<img src="https://render.githubusercontent.com/render/math?math=r_i = \frac{P_i - P_{t\neq i}}{\sqrt{var(P_i) + var(P_{t\neq i})} }">
+<img src="https://render.githubusercontent.com/render/math?math=r_i = \frac{P_i - P_{t\neq i}}{\sqrt{ var(P_i)  \plus  var(P_{t\neq i} )} }">
 
 where <em>P</em><sub>i &ne;t</sub> is the total proportion estimate from the data set not including region <em>i</em>.
 
