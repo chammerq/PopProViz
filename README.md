@@ -1,8 +1,8 @@
-Spatial visualization of unnormalized data is often effectively just plotting population density. Scaling by population density can help, but depending on the type of data, this can effectively be plotting inverse population density. To adjust for this, I suggest plotting a weighted residual instead. Several of these options are briefly discussed below. An R-file with a function that implements these methods is included
+Spatial visualization of unnormalized data is often effectively just plotting population density. Scaling by population density can help, but depending on the type of data, this can effectively be plotting inverse population density. To adjust for this, I suggest plotting a weighted residual instead. Several of these options are briefly discussed below. Also an R-file with a function that implements these methods is included.
 
 ## Weighted Least Squares
 
-Starting with the assumption that a quantity q<sub>i</sub> in region <em>i</em> with a population p<sub>i</sub> is normally distributed with the variance proportional to the population:
+Starting with the assumption that a quantity <em>q<sub>i</sub></em> in region <em>i</em> with a population <em>p<sub>i</sub></em> is normally distributed with the variance proportional to the population:
 
 <img src="https://render.githubusercontent.com/render/math?math=q_i = N(\alpha p_i, \beta p_i)">
 
