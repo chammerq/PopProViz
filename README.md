@@ -26,7 +26,7 @@ b. Use variance estimate from binomial distribution assumption:
 
 
 ## Difference in proportions
-Starting with the assumption that  q<sub>i</sub> is  binomially  distributed, then the estimate for the proportion is:
+Starting with the assumption that  <em>q<sub>i</sub></em> is  binomially  distributed, then the estimate for the proportion is:
 
 <img src="https://render.githubusercontent.com/render/math?math=P_i = \frac{q_i}{p_i}">
 
@@ -35,7 +35,7 @@ with estimate variance:
 <img src="https://render.githubusercontent.com/render/math?math=var(P_i) = \frac{P_i(1-P_i)}{p_i}">
 
 
-The weighted residual in this case is the difference in in proportions:
+In this case, what is used to plot is the variance weighted difference in proportion of region <em>i</em> and the proportion of the rest of the data:
 
 <img src="https://render.githubusercontent.com/render/math?math=r_i = \frac{P_i - P_{t\neq i}}{\sqrt{ var(P_i)  \plus  var(P_{t\neq i} )} }">
 
@@ -43,5 +43,5 @@ where <em>P</em><sub>i &ne;t</sub> is the total proportion estimate from the dat
 
 
 ## Example 
-In the figure below, lightning deaths from 1959 to 1994 are plotted below to demonstrate these normalization techniques. The lightning data is sourced from https://www.weather.gov/cae/lightningbystate.html and the population numbers are from the 1979 estimate sourced from https://www2.census.gov/programs-surveys/popest/datasets/1970-1980/national/asrh/. In the raw numbers, the larger population of Florida makes it stand out. In the per-population plot, the small population makes Wyoming stand out. The weighted least squares normalization is able to highlight both Florida and Wyoming along with a handful of other states. It also highlights how California is surprisingly low. In the binomially distributed normalization, California is so low that washes out the rest. In my experience in some data sets, the second method can amplify outliers, which could be desirable depending on the goals.
+In the figure below, lightning deaths from 1959 to 1994 are plotted below to demonstrate these normalization techniques. The lightning data is sourced from https://www.weather.gov/cae/lightningbystate.html and the population numbers are from the 1979 estimate sourced from https://www2.census.gov/programs-surveys/popest/datasets/1970-1980/national/asrh/. In the raw numbers, the larger population of Florida makes it stand out. In the per-population plot, the small population makes Wyoming stand out. The weighted least squares normalization is able to highlight both Florida and Wyoming along with a handful of other states. It also highlights how California is surprisingly low. In the binomially distributed normalization, California is so low that it washes out the rest. In my experience the second method can amplify outliers in some data sets, which may or may not be desirable depending on the goal.
 ![Comparision](https://user-images.githubusercontent.com/102822092/167511207-8ae95be8-a9e4-4d15-80b8-badd0a5991a0.png)
