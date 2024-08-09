@@ -3,22 +3,22 @@ Spatial visualization of unnormalized data is often effectively just plotting po
 ## Method 1: Weighted Least Squares
 Starting with the assumption (justified by the Central Limit Theorem) that a quantity <em>q<sub>i</sub></em> in region <em>i</em> with a population <em>p<sub>i</sub></em> is normally distributed with mean and variance proportional to the population:
 
-<img src="https://render.githubusercontent.com/render/math?math=q_i = N(\alpha p_i, \beta p_i)">
+$$q_i = N(\alpha p_i, \beta p_i)$$
 
 Then the new value to be plotted is the weighted residual:
 
-<img src="https://render.githubusercontent.com/render/math?math=r_i =\frac{q_i - \alpha p_i}{\sqrt{\beta p_i}}">
+$$r_i =\frac{q_i - \alpha p_i}{\sqrt{\beta p_i}}$$
 
 The scalar &alpha; can be found with weighted least squares and is equal to the total proportion:
 
-<img src="https://render.githubusercontent.com/render/math?math=\alpha = \frac{\sum_i q_i}{\sum_i p_i}">
+$$\alpha = \frac{\sum_i q_i}{\sum_i p_i}$$
 
 
 The term &beta; doesn't affect the relative scaling and is not really needed but can be calculated in 2 ways.
 
 a. Using the least squares estimate:
 
-<img src="https://render.githubusercontent.com/render/math?math=\beta = \frac{1}{N-1} \sum_{i=1}^N \frac{(q_i - \alpha p_i)^2}{p_i}"> 
+$$\beta = \frac{1}{N-1} \sum_{i=1}^N \frac{(q_i - \alpha p_i)^2}{p_i}$$ 
 
 b. Using the variance estimate from binomial distribution assumption:
 
@@ -28,16 +28,16 @@ b. Using the variance estimate from binomial distribution assumption:
 ## Method 2: Difference in proportions
 Starting with the assumption that  <em>q<sub>i</sub></em> is  binomially  distributed, then the estimate for the proportion is:
 
-<img src="https://render.githubusercontent.com/render/math?math=P_i = \frac{q_i}{p_i}">
+$$P_i = \frac{q_i}{p_i}$$
 
 which has the estimate variance: 
 
-<img src="https://render.githubusercontent.com/render/math?math=var(P_i) = \frac{P_i(1-P_i)}{p_i}">
+$$var(P_i) = \frac{P_i(1-P_i)}{p_i}$$
 
 
 In this case, the quantity to be plotted is the variance weighted difference in proportion of region <em>i</em> and the proportion of the rest of the data:
 
-<img src="https://render.githubusercontent.com/render/math?math=r_i = \frac{P_i - P_{t\neq i}}{\sqrt{ var(P_i)  \plus  var(P_{t\neq i} )} }">
+$$r_i = \frac{P_i - P_{t\neq i}}{\sqrt{ var(P_i)  +  var(P_{t\neq i} )} }$$
 
 where <em>P</em><sub>i &ne;t</sub> is the total proportion estimate from the data set not including region <em>i</em>.
 
